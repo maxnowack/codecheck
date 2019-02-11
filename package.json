@@ -1,0 +1,27 @@
+{
+  "name": "codecheck",
+  "version": "1.0.0",
+  "description": "Command line tool for checking and cleaning code repositories",
+  "main": "dist/index.js",
+  "bin": {
+    "codecheck": "dist/index.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "build": "rm -r ./dist; tsc && chmod +x dist/index.js"
+  },
+  "author": "Max Nowack",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/node": "^10.12.2",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
